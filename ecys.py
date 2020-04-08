@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 
 class FilterDecorator(ABC):
@@ -110,7 +110,7 @@ class Entity:
         self._components[type(component)] = component
 
     def remove_component(self, component_type):
-        self._components.pop(component_type)
+        return self._components.pop(component_type)
 
     def get_component(self, component_type):
         return self._components[component_type]
