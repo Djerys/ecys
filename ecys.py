@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
 
 
+__version__ = '1.0.0'
+
+
 class FilterDecorator(ABC):
     """Abstract base decorator to filter entities in System class."""
     def __init__(self, *component_types):

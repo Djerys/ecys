@@ -1,11 +1,19 @@
 from setuptools import setup
 
 
+with open('ecys.py') as source:
+    ecys = {}
+    for line in source.readlines():
+        if line.startswith('__version__'):
+            exec(line, ecys)
+            break
+
+
 README = open('README.rst').read()
 
 setup(
     name='ecys',
-    version='1.0.0',
+    version=ecys['__version__'],
     py_modules=['ecys'],
     url='https://github.com/Djerys/ecys',
     license='MIT',
