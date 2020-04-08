@@ -2,7 +2,7 @@ Ecys
 ====
 **Ecys is a simple realization of Entity Components System**
 
-Ecys is an MIT licendes Entity Component System (ECS).
+Ecys is an MIT licensed Entity Component System (ECS).
 The design is based on *anax* realization of ECS.
 
 1) Compatibility
