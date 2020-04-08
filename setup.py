@@ -11,6 +11,6 @@ setup(
     license='MIT',
     author='Dmitry Kotukhov',
     author_email='djerys@ya.ru',
-    description='Simple realization of Entity Component System',
+    description='A simple realization of Entity Component System',
     long_description=README
 )
