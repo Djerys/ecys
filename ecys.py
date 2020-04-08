@@ -48,7 +48,7 @@ class Component:
 class System(ABC):
     """Base class for all Systems to inherit from.
 
-    System instance must contain a `update` method. This method
+    System instance must contain an `update` method. This method
     will be call by each call to `World.update`.
 
     System subclass must be declared with filter decorator to add
