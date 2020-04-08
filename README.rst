@@ -37,12 +37,14 @@ Components from your Entity.
 
 * Components
 
-You should define your Component classes. The should not contain
+You should define your Component classes. They should not contain
 any logic. Components might have initialization code, but no
 updating state logic. You can use *ecys.Component* to indicate your
 class as Component, but it's not obligatory.
 
 Example of simple Velocity component::
+
+    from dataclasses import dataclass
 
     @dataclass
     class Velocity(ecys.Component):
@@ -60,7 +62,7 @@ You should define your System classes with *ecys.requires* or
 tuple of Entities with (or without) Components specified in decorator
 parameters.
 
-A simple RenderSystem::
+A simple MovementSystem::
 
     @ecys.requires(Position, Velocity)
     class MovementSystem(ecys.System):
