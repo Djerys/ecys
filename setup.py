@@ -7,7 +7,7 @@ setup(
     name='ecys',
     version='1.0.0',
     py_modules=['ecys'],
-    url='',
+    url='https://github.com/Djerys/ecys',
     license='MIT',
     author='Dmitry Kotukhov',
     author_email='djerys@ya.ru',
