@@ -57,10 +57,11 @@ Example of simple Velocity component::
 Systems are where all processing logic is executed. All Systems must
 inherit from the *ecys.System* class, and have a method called *update*.
 You should add your System to the World instance to using.
-You should define your System classes with *ecys.requires* or
-*ecys.excludes* decorators. A *required_entities* method will return
+You can define your System classes with *ecys.requires* or
+*ecys.excludes* decorators. A *required_entities* property returns
 tuple of Entities with (or without) Components specified in decorator
-parameters.
+parameters. If you have not defined a decorator a *required_entities* returns
+all entities in your World.
 
 A simple MovementSystem::
 
