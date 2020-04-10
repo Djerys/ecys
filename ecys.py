@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-__version__ = '2.0.0'
+__version__ = '2.1.0'
 
 
 class FilterDecorator(ABC):
@@ -115,6 +115,9 @@ class Entity:
 
     def get_component(self, component_type):
         return self._components[component_type]
+
+    def get_components(self, *component_types):
+        return tuple(self._components[ct] for ct in component_types)
 
     def has_component(self, component_type):
         return component_type in self._components
