@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-__version__ = '1.2.0'
+__version__ = '1.3.0'
 
 
 class FilterDecorator(ABC):
@@ -171,6 +171,12 @@ class World:
         if clauses is None:
             return tuple(self._entities)
         return tuple(e for e in self._entities if clauses(e))
+
+    def entities_with(self, *components):
+        return tuple(
+            e for e in self._entities if
+            e.has_components(*components)
+        )
 
     def update(self, *args, **kwargs):
         self._delete_dead_entities()
