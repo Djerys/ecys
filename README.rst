@@ -58,9 +58,9 @@ Systems are where all processing logic is executed. All Systems must
 inherit from the *ecys.System* class, and have a method called *update*.
 You should add your System to the World instance to using.
 You can define your System classes with *ecys.requires* or
-*ecys.excludes* decorators. A *required_entities* property returns
+*ecys.excludes* decorators. An *entities* property returns
 tuple of Entities with (or without) Components specified in decorator
-parameters. If you have not defined a decorator a *required_entities* returns
+parameters. If you have not defined a decorator an *entities* returns
 all entities in your World.
 
 A simple MovementSystem::
@@ -69,7 +69,7 @@ A simple MovementSystem::
     class MovementSystem(ecys.System):
 
         def update(self):
-            for entity in self.required_entities:
+            for entity in self.entities:
                 position = entity.get_component(Position)
                 velocity = entity.get_component(Velocity)
                 position.x += velocity.x
@@ -95,7 +95,7 @@ priority is 0::
     world.add_system(AnotherOneSystem())
 
 
-Create Entites::
+Create Entities::
 
     player = world.create_entity(Position(0, 0), Velocity(1, 2))
     # . . .

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-__version__ = '1.3.0'
+__version__ = '2.0.0'
 
 
 class FilterDecorator(ABC):
@@ -52,11 +52,12 @@ class System(ABC):
     will be call by each call to `World.update`.
 
     System subclass must be declared with filter decorator to add
-    __clauses__ because required_entities property returns entities
-    with components according to __clauses__.
+    __clauses__ because entities property returns entities
+    with components according to __clauses__. By default entities
+    returns all entities in a World instance.
 
     Example of overriding `update' method:
-    for entity in self.required_entities:
+    for entity in self.entities:
         a = entity.get_component(ComponentA)
         b = entity.get_component(ComponentB)
         do_some_work(a, b)
@@ -71,7 +72,7 @@ class System(ABC):
         self.priority = None
 
     @property
-    def required_entities(self):
+    def entities(self):
         assert self.world, 'No world for this System'
         return self.world.filtered_entities(self.__clauses__)
 
