@@ -29,7 +29,7 @@ You can create or delete Entities, add or remove Systems while your
 application is running.
 
 
-* Entity
+* Entities
 
 Entity is a simple container for Components. You can add or remove
 Components from your Entity.
